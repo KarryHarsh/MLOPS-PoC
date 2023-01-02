@@ -1,0 +1,14 @@
+stages:
+  mlops-poc:
+    cmd: papermill notebooks/stock_up_down_parametrize.ipynb artifact_dir/notebooks/stock_up_down_parametrize_out.ipynb -p seed ${base.index} -p EXPERIMENT ${base.experiment} -p RUN_NAME ${base.run_name} -p GAMMA ${svm.gamma} -p C_VALUE ${svm.c_value} -p N_NEIGHBORS ${k_neighbors.n_neighbours} -p N_ESTIMATORS ${gbc.n_estimators}   
+    deps:
+    - datadir/input
+    - notebooks/logger.py
+    - notebooks/stock_up_down_parametrize.ipynb
+    - notebooks/utils.py
+    outs:
+    - artifact_dir/models
+    - artifact_dir/plots
+    metrics:
+    - artifact_dir/metrics:
+        cache: false

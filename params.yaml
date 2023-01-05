@@ -5,7 +5,7 @@ base:
   
 svm:
   gamma: 2
-  c_value: 1
+  c_value: 2
 
 k_neighbors:
   n_neighbours: 5

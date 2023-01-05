@@ -3,7 +3,7 @@ stages:
   mlops-poc:
     cmd: papermill notebooks/stock_up_down_parametrize.ipynb artifact_dir/notebooks/stock_up_down_parametrize_out.ipynb
       -p seed GOLD -p EXPERIMENT stock_up_down -p RUN_NAME initial_assessment -p GAMMA
-      2 -p C_VALUE 1 -p N_NEIGHBORS 5 -p N_ESTIMATORS 100
+      2 -p C_VALUE 2 -p N_NEIGHBORS 5 -p N_ESTIMATORS 100
     deps:
     - path: datadir/input
       md5: c36e22a5ef7f4d7f64d4f858939fe84c.dir
@@ -20,14 +20,14 @@ stages:
       size: 5749
     outs:
     - path: artifact_dir/metrics
-      md5: 585ea71e2665b6bc1926112973b7e5ea.dir
-      size: 473
+      md5: 576b1fb7114bccc1b4997405c28a4c2a.dir
+      size: 471
       nfiles: 5
     - path: artifact_dir/models
-      md5: 226ebe44d94d820697f1595424379a6e.dir
-      size: 2000244
+      md5: 30b0d489fb9133e3047f67912f828446.dir
+      size: 2007408
       nfiles: 5
     - path: artifact_dir/plots
-      md5: f66f9e84dfd6aabdbc891573eec14fb0.dir
-      size: 275594
+      md5: 799c7d1b138ca62123263facd1c1b8ff.dir
+      size: 279108
       nfiles: 10
